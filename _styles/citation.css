@@ -13,8 +13,9 @@
 
 .citation-image {
   position: relative;
-  width: 180px;
+  width: 60px;
   flex-shrink: 0;
+  fill: antiquewhite;
 }
 
 .citation-image img {
@@ -42,11 +43,18 @@
 .citation-title,
 .citation-authors,
 .citation-details,
-.citation-description {
+.citation-info .citation-description {
   width: 100%;
 }
 
 .citation-title {
+  font-weight: var(--semi-bold);
+  font-size: large;
+  text-align: center;
+}
+
+.citation-info {
+  text-align: right;
   font-weight: var(--semi-bold);
 }
 
