@@ -136,8 +136,8 @@
 
       // info template
       let info = "";
-      info += `Showing ${x.toLocaleString()} of ${n.toLocaleString()} results<br>`;
-      info += "<a href='./'>Clear search</a>";
+      info += ` ${n.toLocaleString()} 个结果中的 ${x.toLocaleString()} 个<br>`;
+      info += "<a href='./'>清除搜索</a>";
 
       // set info HTML string
       boxes.forEach((el) => (el.innerHTML = info));
