@@ -1,1 +1,1 @@
-Sitemap: http://www.hustlangya.fun/sitemap.xml
+Sitemap: https://hustlyrm.github.io/langya_website/sitemap.xml
