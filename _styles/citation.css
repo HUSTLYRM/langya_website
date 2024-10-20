@@ -13,6 +13,13 @@
   box-shadow: var(--shadow);
 }
 
+.citation-simple {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .citation-image {
   position: relative;
   fill: antiquewhite;
@@ -38,11 +45,31 @@
   z-index: 0;
 }
 
+.citation-text-simple {
+  display: flex;
+  gap: 10px;
+  height: min-content;
+  width: 80%;
+  margin-bottom: 10px;
+  text-align: left;
+  flex-direction: row;
+  overflow-wrap: break-word;
+  z-index: 0;
+}
+
 .citation-title,
 .citation-authors,
 .citation-details,
 .citation-info .citation-description {
-  width: 100%;
+  max-width: 100%;
+}
+
+.citation-authors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .citation-title {
@@ -54,6 +81,9 @@
 
 .citation-info {
   font-weight: var(--semi-bold);
+  font-size: medium;
+  text-align: right;
+  margin-top: 20px;
 }
 
 .citation-text > .icon {
@@ -96,6 +126,11 @@
   .citation-image {
     width: unset;
   }
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=citation.css.map */
