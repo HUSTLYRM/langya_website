@@ -39,6 +39,7 @@
   height: min-content;
   width: 80%;
   margin-bottom: 20px;
+  margin-top: 20px;
   text-align: left;
   flex-direction: column;
   overflow-wrap: break-word;
