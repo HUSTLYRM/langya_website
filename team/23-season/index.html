@@ -446,6 +446,14 @@
   <section class="background" data-size="page">
     <h1 id="23-赛季团队成员">
 <i class="icon fa-solid fa-users" style="color: #e0e0e0;"></i>23 赛季团队成员</h1>
+<div class="search-box">
+  <input type="text" class="search-input" oninput="onSearchInput(this)" placeholder="在此页面内进行搜索">
+  <button disabled data-tooltip="Clear search" aria-label="clear search" onclick="onSearchClear()">
+    <i class="icon fa-solid fa-magnifying-glass" style="color: #e0e0e0;"></i>
+  </button>
+</div>
+
+<div class="search-info"></div>
 
 <p>历史成员请参考<a href="/team/history">历届成员</a>。</p>
   </section>
