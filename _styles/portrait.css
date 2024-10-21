@@ -82,4 +82,8 @@
   top: -2px;
 }
 
+.portrait[data-style=small] .portrait-role {
+  font-size: 13px;
+}
+
 /*# sourceMappingURL=portrait.css.map */
