@@ -34,7 +34,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* 黑色半透明遮罩，0.5为透明度 */
+  background-color: rgba(0, 0, 0, 0.3); /* 黑色半透明遮罩，0.5为透明度 */
   z-index: -1; /* 确保遮罩层位于视频前面 */
 }
 
