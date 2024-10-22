@@ -58,6 +58,7 @@
 }
 
 .portrait-name {
+  white-space: nowrap;
   font-family: var(--heading);
   font-weight: var(--semi-bold);
 }
