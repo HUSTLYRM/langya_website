@@ -87,4 +87,10 @@
   font-size: 11px;
 }
 
+.portrait .portrait-role {
+  font-size: 13px;
+  font-weight: var(--regular);
+  color: var(--text-light);
+}
+
 /*# sourceMappingURL=portrait.css.map */
