@@ -62,16 +62,16 @@
   z-index: 0;
 }
 .citation-text-simple .citation-authors {
-  min-width: 20%;
+  min-width: 30%;
 }
 .citation-text-simple .citation-title {
-  min-width: 20%;
+  max-width: 50%;
 }
 .citation-text-simple .citation-info {
   min-width: 10%;
 }
 .citation-text-simple .citation-description {
-  min-width: 50%;
+  min-width: 60%;
 }
 
 .citation-title,
