@@ -1,7 +1,7 @@
 ---
 name: RoboMaster 开源奖
 type: 其他
-prize: 优秀奖（英雄机器人（软件、算法方向）
+prize: 优秀奖 英雄机器人（软件、算法方向）
 date: 2024-10-01
 members: 
   - 周晗
