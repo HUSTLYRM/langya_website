@@ -24,7 +24,7 @@ nav:
 {% include section.html %}
 <!-- echarts -->
 ## 积分榜排名
-<div id="echarts" style="width: 100%; height: 400px;"></div>
+<div id="echarts" style="width: 100%; height: 300px;"></div>
 
 <script>
 
