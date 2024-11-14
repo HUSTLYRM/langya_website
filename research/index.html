@@ -521,7 +521,16 @@ option = {
     type: 'value',
     inverse: true,
     min: 0, 
-    max: 265
+    max: 265,
+            axisLabel: {
+            formatter: function (value) {
+                if (value === 0) {
+                    return "冠军"; // 将坐标轴等于 0的标签替换为图片
+                } else {
+                    return value; // 其他情况保持原始数值
+                }
+            },
+        }
   },
   series: [
     {
