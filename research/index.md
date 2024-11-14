@@ -42,7 +42,7 @@ option = {
         formatter: function (params) {
             var info = ["国家级二等奖", "分区赛十六强","分区赛八强，全国赛线上评选，国家级一等奖","分区赛十六强，全国赛四十六强，国家级二等奖","分区赛殿军，全国赛二十八强，国家级二等奖"];
             var dataIndex = params[0].dataIndex; // 获取数据点的索引
-            return params[0].axisValue + info[dataIndex]+'\n 排名：' + params[0].value; // 自定义提示框内容，这里显示额外信息
+            return params[0].axisValue + info[dataIndex]+'<br> 排名：' + params[0].value; // 自定义提示框内容，这里显示额外信息
         }
     },
   xAxis: {
