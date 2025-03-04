@@ -52,12 +52,19 @@ _本项目基于 [Lab Website Template](https://greene-lab.gitbook.io/lab-websit
 1. 点击项目右上角的 `Use this template` 按钮，创建一个新的仓库。
 <a href="https://github.com/new?template_name=langya_website&template_owner=HUSTLYRM" class="center"><img src="./assets/use_template.png" width="100px"></a>
 
-2. 修改 `_config.yml` 文件，配置网站基本信息。
+2. 进入 `Actions` 页面，执行 `first-time-setup` workflow，初始化网站。
+![first-time-setup](./assets/actions.png)
+
+3. 修改 `_config.yml` 文件，配置网站基本信息。请确保至少设置了title、description字段。
+
+4. 设置Github Pages，选择 `gh-pages` 分支作为网站源。
+![gh-pages](./assets/pages.png)
+5. 等待几分钟，您的网站就会自动部署到GitHub Pages上了。
 
 ### 预览网站
 #### GitHub Pages（推荐）
 
-当您在GitHub上打开或更新Pull Request（PR）请求时，GitHub Actions将对您对网站进行更改进行实时预览。预览链接将会在PR的请求的评论中。这样，审阅者和编辑可以方便地看到每次更改的切实结果。
+当您在GitHub上打开或更新Pull Request（PR）请求时，GitHub Actions会将更改进行实时预览。预览链接将会自动更新在PR请求的评论中。这样，审阅者和编辑可以方便地看到每次更改的切实结果。
 
 #### 本地预览
 1. 安装 Docker Desktop（推荐）或 Docker，并启动 Docker。
@@ -81,6 +88,9 @@ _注意：您可能需要为Docker配置特殊的网络环境以支持Docker安�
 | `_patents` | 团队所获专利信息配置 |
 | `_posts` | 博客文章信息配置 |
 | `_news` | 新闻文章信息配置 |
+
+### 更多配置
+请参考 [Lab Website Template](https://greene-lab.gitbook.io/lab-website-template-docs) 文档。
 
 
 ## 贡献
