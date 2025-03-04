@@ -62,10 +62,6 @@ jobs:
             .github/workflows/versioning.yaml \
             .github/pull_request_template.md \
 
-      - name: Rename files
-        run: |
-          mv -f .github/user_pull_request_template.md .github/pull_request_template.md
-
       - name: Set vars for personalization
         run: |
           user="${{ github.repository_owner }}"
