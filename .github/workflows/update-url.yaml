@@ -49,7 +49,7 @@ jobs:
             if (contents.match(find))
               contents = contents.replace(find, replace);
             else
-              contents = `Visit ${replace} 🚀\n\n` + contents;
+              contents = `请访问 ${replace} 🚀\n\n` + contents;
             writeFileSync(file, contents);
 
       - name: Check if readme changed
