@@ -49,7 +49,7 @@ _本项目基于 [Lab Website Template](https://greene-lab.gitbook.io/lab-websit
 
 ## 使用方法
 
-视频使用教程已发布到 [Bilibili](【一键创建你的战队官网！零代码零成本！】 https://www.bilibili.com/video/BV1M79HYJEeu/)。
+视频使用教程已发布到 [Bilibili 【一键创建你的战队官网！零代码零成本！】 ](https://www.bilibili.com/video/BV1M79HYJEeu/)。
 
 ### 创建网站
 1. 点击项目右上角的 `Use this template` 按钮，创建一个新的仓库。
