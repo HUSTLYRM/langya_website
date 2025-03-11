@@ -31,6 +31,10 @@ defaults:
       type: "awards"
     values:
       layout: award
+  - scope:
+      type: "events"
+    values:  
+      layout: event
   # markdown files in /_posts
   - scope:
       type: "posts"
@@ -57,6 +61,8 @@ collections:
   projects:
     output: true
   patents:
+    output: true
+  events:
     output: true
 
 # jekyll plugins

@@ -1,0 +1,175 @@
+{% assign award = site.awards
+  | where_exp: "award", "award.slug == include.lookup"
+  | first
+  | default: include
+%}
+
+{% assign prize = award.prize %} 
+
+{% if include.style == "rich"%}
+
+<div class="citation-container">
+
+
+<div class="citation">
+
+
+
+  <div class="citation-text">
+
+
+
+      {% if award.name or award.type or award.description %}
+
+
+      <div class="citation-title">  
+          {% if award.name %}
+              {{ award.name }}
+          {% endif %}
+      </div>
+      {% endif %}
+          <div class="citation-date">
+             <!-- 解析award.time的Y-m -->
+              <!-- 输出为%Y年-%m月 -->
+              {% if award.date %}
+              {{ award.date | date: "%Y年%m月%d日 %H:%M" }}
+              {% endif %}
+             
+            <a href="{{ award.link | relative_url }}" >
+              直播链接
+            </a>
+          </div>
+      
+      
+          <style>
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+            .container {
+                display: flex;
+                height: 100px;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+            }
+            .info_container {
+              border-radius: 3px;
+                flex: 1;
+                display: flex;
+                position: relative;
+                overflow: hidden;
+            }
+            .team {
+              border-radius: 3px;
+                flex: 1;
+                display: flex;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+                height: 90px;
+            }
+            .team.red {
+                background-color: #ff4c4c;
+                /* 设置渐变从左到右变为透明 */
+                background: linear-gradient(to right, #ff4c4c, rgba(255, 76, 76, 0));
+
+            }
+            .team.blue {
+                background-color: #4c4cff;
+                /* 设置渐变从右到左变为透明 */
+                background: linear-gradient(to left, #4c4cff, rgba(76, 76, 255, 0));
+                justify-content: flex-end;
+            }
+            .team.blue img {
+                /* 居右 */
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .team.red img {
+                /* 向左对齐 */
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+            .team img {
+                width: 60px;
+                height: 60px;
+                z-index: 1;
+                /* 圆形 */
+                border-radius: 50%;
+                /* 留一点边 */
+                padding: 3px;
+                /* 背景白色 */
+                background-color: #fff;
+            }
+            .divider {
+                position: absolute;
+                width: 0px;
+                height: 100%;
+                background-color: #fff;
+                z-index: 2;
+            }
+            .score {
+                position: absolute;
+                /* 字体缩放 */
+                font-size: 2em;
+
+                color: rgb(106, 105, 105);
+                z-index: 3;
+            }
+            .info {
+              border-radius: 3px;
+              flex: 1;
+              display: flex;
+              align-items: center;
+              position: relative;
+              overflow: hidden;
+            }
+            .info_red {
+              justify-content: flex-start; 
+            }
+            .info_blue {
+              justify-content: flex-end; 
+            }
+        </style>
+        <div class="container">
+          <div class="team red">
+              <img src="{{award.red_logo}}" alt="Red Team Logo">
+              <p style="margin-right: 20px;">{{ award.red }}</p>
+          </div>
+          <div class="divider"></div>
+          <div class="score">{{award.red_score}}:{{award.blue_score}}</div>
+          <div class="team blue">
+            <p style="margin-left: 20px;">{{ award.blue }}</p>
+              <img src="{{award.blue_logo}}" alt="Blue Team Logo">
+          </div>
+          
+      </div>
+      <div class="info_container">
+        <div class="info info_red">
+          <div style="margin-left: 10px; margin-right: 10px;">净胜点 {{ award.red_base.score }}</div>
+        </div>
+        <div class="info info_blue">
+          <div style="margin-left: 10px; margin-right: 10px;">
+            {{ award.blue_base.score }}
+          </div>
+        </div>
+      </div>
+      <div class="info_container">
+      <div class="info info_red">
+        <div style="margin-left: 10px; margin-right: 10px;">净胜剩余血量 {{ award.red_base.remain }}</div>
+      </div>
+      <div class="info info_blue">
+        <div style="margin-left: 10px; margin-right: 10px;">
+          {{ award.blue_base.remain }}
+        </div>
+      </div>
+    </div>
+    
+    
+
+  </div>
+
+</div>
+</div>
+{% endif %} 
