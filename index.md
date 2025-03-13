@@ -27,7 +27,11 @@
 %}
 {% include section.html %}
 
+## 近期赛程
+**RoboMaster 2025 联盟赛 西北站** 3月13日 15:00 抽签仪式后更新赛程信息。
 
+{% include list.html data="events" component="events" style="rich" %} 
+{% include section.html %}
 
 ## 高光时刻
 
