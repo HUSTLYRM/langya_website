@@ -92,8 +92,10 @@
                 margin-left: 10px;
             }
             .team img {
-                width: 60px;
-                height: 60px;
+                max-width: 20%;
+                max-height: 50px;
+                /* 自动缩放 */
+                width: auto;
                 z-index: 1;
                 /* 圆形 */
                 border-radius: 50%;
@@ -101,6 +103,11 @@
                 padding: 3px;
                 /* 背景白色 */
                 background-color: #fff;
+            }
+            .team_name {
+                min-width: 50px;
+                /* 行距 */
+                line-height: 1.0;
             }
             .divider {
                 position: absolute;
@@ -135,12 +142,12 @@
         <div class="container">
           <div class="team red">
               <img src="{{award.red_logo}}" alt="Red Team Logo">
-              <p style="margin-right: 20px;">{{ award.red }}</p>
+              <p class="team_name" style="margin-right: 20px;">{{ award.red }}</p>
           </div>
           <div class="divider"></div>
           <div class="score">{{award.red_score}}:{{award.blue_score}}</div>
           <div class="team blue">
-            <p style="margin-left: 20px;">{{ award.blue }}</p>
+            <p class="team_name" style="margin-left: 20px;">{{ award.blue }}</p>
               <img src="{{award.blue_logo}}" alt="Blue Team Logo">
           </div>
           
