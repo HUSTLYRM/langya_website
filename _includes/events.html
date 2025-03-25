@@ -32,11 +32,12 @@
              <!-- 解析award.time的Y-m -->
               <!-- 输出为%Y年-%m月 -->
               {% if award.date %}
-              {{ award.date | date: "%Y年%m月%d日 %H:%M" }}
+
+                {{ award.date | date: "%Y年%m月%d日 %H:%M"  }}
               {% endif %}
              
             <a href="{{ award.link | relative_url }}" >
-              直播链接
+              链接
             </a>
           </div>
       
@@ -152,26 +153,7 @@
           </div>
           
       </div>
-      <div class="info_container">
-        <div class="info info_red">
-          <div style="margin-left: 10px; margin-right: 10px;">净胜点 {{ award.red_base.score }}</div>
-        </div>
-        <div class="info info_blue">
-          <div style="margin-left: 10px; margin-right: 10px;">
-            {{ award.blue_base.score }}
-          </div>
-        </div>
-      </div>
-      <div class="info_container">
-      <div class="info info_red">
-        <div style="margin-left: 10px; margin-right: 10px;">净胜剩余血量 {{ award.red_base.remain }}</div>
-      </div>
-      <div class="info info_blue">
-        <div style="margin-left: 10px; margin-right: 10px;">
-          {{ award.blue_base.remain }}
-        </div>
-      </div>
-    </div>
+     
     
     
 
