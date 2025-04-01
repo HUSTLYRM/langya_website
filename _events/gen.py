@@ -5,81 +5,84 @@ import time
 
 # 假设这是从文件或API获取的JSON数据，从url
 # https://rm-static.djicdn.com/live_json/schedule.json
-# json_data = requests.get("https://rm-static.djicdn.com/live_json/schedule.json").json()
-json_data = json.loads(open("/Users/micdz/Downloads/schedule.json").read())
-matches_ = json_data["data"]["last_event"]["zones"]["nodes"]
+# json_data = requests.get("https://schedule.scutbot.cn/api/schedule").json()
+json_data = json.loads(open('/Users/micdz/Downloads/schedule (2).json').read())
+# matches_ = json_data["data"]["last_event"]["zones"]["nodes"]
 
 video_data = requests.get("https://rm-static.djicdn.com/live_json/simple_cms.json").json()
 
 target_college = "华中科技大学"
 
-print(len(matches_))
+# print(len(matches_))
 
 saved_matches = []
 
-for match in matches_:
-    print(match["name"])
-    # print(match["id"])
-    # print(match["groupMatches"]["nodes"])
-    for game in match["knockoutMatches"]["nodes"]:
-        saved_match = {}
-        if game["blueSide"]["player"]["team"]["collegeName"] == target_college or game["redSide"]["player"]["team"]["collegeName"] == target_college:
-        #    print(game)
-            saved_match["blueSide"] = game["blueSide"]
-            saved_match["redSide"] = game["redSide"]
-            saved_match["redSideWinGameCount"] = game["redSideWinGameCount"]
-            saved_match["blueSideWinGameCount"] = game["blueSideWinGameCount"]
-            saved_match["planStartedAt"] = game["planStartedAt"]
-            saved_match["match_id"] = game["id"]
-            # print(saved_match)
-            # break
-            saved_match["name"] = f"{match['name']}淘汰赛"
-            if game["slug"]:
-                saved_match["name"] = f"{match['name']}{game['slug']}"
+# for match in matches_:
+#     print(match["name"])
+#     # print(match["id"])
+#     # print(match["groupMatches"]["nodes"])
+#     for game in match["knockoutMatches"]["nodes"]:
+#         saved_match = {}
+#         if game["blueSide"]["player"]["team"]["collegeName"] == target_college or game["redSide"]["player"]["team"]["collegeName"] == target_college:
+#         #    print(game)
+#             saved_match["blueSide"] = game["blueSide"]
+#             saved_match["redSide"] = game["redSide"]
+#             saved_match["redSideWinGameCount"] = game["redSideWinGameCount"]
+#             saved_match["blueSideWinGameCount"] = game["blueSideWinGameCount"]
+#             saved_match["planStartedAt"] = game["planStartedAt"]
+#             saved_match["match_id"] = game["id"]
+#             # print(saved_match)
+#             # break
+#             saved_match["name"] = f"{match['name']}淘汰赛"
+#             if game["slug"]:
+#                 saved_match["name"] = f"{match['name']}{game['slug']}"
 
-            for video in video_data["simple_cms"]:
-                if video["content"].get("match_id") is None:
-                    continue
+#             for video in video_data["simple_cms"]:
+#                 if video["content"].get("match_id") is None:
+#                     continue
 
-                # print(video["content"]["match_id"], saved_match["match_id"])
-                if video["content"]["match_id"] == saved_match["match_id"]:
-                    saved_match["video"] = video["content"]["main_source_url"]
-                    break
+#                 # print(video["content"]["match_id"], saved_match["match_id"])
+#                 if video["content"]["match_id"] == saved_match["match_id"]:
+#                     saved_match["video"] = video["content"]["main_source_url"]
+#                     break
 
-            saved_matches.append(saved_match) 
-    for game in match["groupMatches"]["nodes"]:
-        saved_match = {}
-        if game["blueSide"]["player"]["team"]["collegeName"] == target_college or game["redSide"]["player"]["team"]["collegeName"] == target_college:
-        #    print(game)
-            saved_match["blueSide"] = game["blueSide"]
-            saved_match["redSide"] = game["redSide"]
-            saved_match["redSideWinGameCount"] = game["redSideWinGameCount"]
-            saved_match["blueSideWinGameCount"] = game["blueSideWinGameCount"]
-            saved_match["planStartedAt"] = game["planStartedAt"]
-            saved_match["match_id"] = game["id"]
-            # print(saved_match)
-            # break
-            saved_match["name"] = f"{match['name']}小组赛"
-            if game["slug"]:
-                saved_match["name"] = f"{match['name']} {game['slug']}"
+#             saved_matches.append(saved_match) 
+#     for game in match["groupMatches"]["nodes"]:
+#         saved_match = {}
+#         if game["blueSide"]["player"]["team"]["collegeName"] == target_college or game["redSide"]["player"]["team"]["collegeName"] == target_college:
+#         #    print(game)
+#             saved_match["blueSide"] = game["blueSide"]
+#             saved_match["redSide"] = game["redSide"]
+#             saved_match["redSideWinGameCount"] = game["redSideWinGameCount"]
+#             saved_match["blueSideWinGameCount"] = game["blueSideWinGameCount"]
+#             saved_match["planStartedAt"] = game["planStartedAt"]
+#             saved_match["match_id"] = game["id"]
+#             # print(saved_match)
+#             # break
+#             saved_match["name"] = f"{match['name']}小组赛"
+#             if game["slug"]:
+#                 saved_match["name"] = f"{match['name']} {game['slug']}"
 
-            for video in video_data["simple_cms"]:
-                if video["content"].get("match_id") is None:
-                    continue
-                if video["content"]["match_id"] == saved_match["match_id"]:
-                    saved_match["video"] = video["content"]["main_source_url"]
-                    break
+#             for video in video_data["simple_cms"]:
+#                 if video["content"].get("match_id") is None:
+#                     continue
+#                 if video["content"]["match_id"] == saved_match["match_id"]:
+#                     saved_match["video"] = video["content"]["main_source_url"]
+#                     break
 
-            saved_matches.append(saved_match)
+#             saved_matches.append(saved_match)
 
-    # break
-    # if saved_match:
+#     # break
+#     # if saved_match:
         
 
 matches_ = json_data["data"]["event"]["zones"]["nodes"]
 for match in matches_:
     for game in match["groupMatches"]["nodes"]:
         saved_match = {}
+        print(game)
+        if game['status'] == 'WAITING':
+            continue
         if not game["blueSide"]["player"]["team"] or not game["redSide"]["player"]["team"]:
             continue
         if game["blueSide"]["player"]["team"]["collegeName"] == target_college or game["redSide"]["player"]["team"]["collegeName"] == target_college:
