@@ -6,7 +6,7 @@ import time
 # 假设这是从文件或API获取的JSON数据，从url
 # https://rm-static.djicdn.com/live_json/schedule.json
 # json_data = requests.get("https://schedule.scutbot.cn/api/schedule").json()
-json_data = json.loads(open('/Users/micdz/Downloads/schedule (2).json').read())
+json_data = json.loads(open('schedule.json').read())
 # matches_ = json_data["data"]["last_event"]["zones"]["nodes"]
 
 video_data = requests.get("https://rm-static.djicdn.com/live_json/simple_cms.json").json()
