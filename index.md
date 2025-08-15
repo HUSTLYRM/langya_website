@@ -27,12 +27,6 @@
 %}
 {% include section.html %}
 
-## 近期赛程
-更多赛程请查看[历史赛程](/events)
-
-{% include list.html data="events" component="events" style="rich" filters="date: 2025"%}
-{% include section.html %}
-
 ## 高光时刻
 
 {% capture text %}
